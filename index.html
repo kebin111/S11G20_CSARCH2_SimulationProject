@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE-754 Binary-32 Floating Point Translator</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.png">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">IEEE-754 Binary-32 Floating Point Translator</h2>
+        <p class="text-center">Convert between binary, hexadecimal, and decimal representations of IEEE-754 Binary-32 floating point numbers.</p>
+        <form>
+            <div class="form-group">
+                <label for="inputType">Input Type:</label>
+                <select class="form-control" id="inputType" onchange="toggleInputFields()">
+                    <option value="hex">8-digit Hexadecimal</option>
+                    <option value="binary">32-bit Binary</option>
+                </select>
+            </div>
+            <div class="form-group" id="hexInputField">
+                <label for="hexInput">8-digit Hex Input:</label>
+                <input type="text" class="form-control" id="hexInput" placeholder="Enter 8-digit hexadecimal value">
+            </div>
+            <div class="form-group" id="binaryInputField" style="display: none;">
+                <label for="binaryInput">32-bit Binary Input:</label>
+                <input type="text" class="form-control" id="binaryInput" placeholder="Enter 32-bit binary value (separated by spaces)">
+                <small class="form-text text-muted">Format: 1 bit for sign, 8 bits for exponent, 23 bits for mantissa (e.g., 0 10000001 01000000000000000000000).</small>
+            </div>
+            <div class="form-group">
+                <label for="decimalType">Decimal Output Type:</label>
+                <select class="form-control" id="decimalType">
+                    <option value="fixed">Fixed Point</option>
+                    <option value="floating">Floating Point</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="convert()">Convert</button>
+        </form>
+        <div class="results">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Result:</strong>
+                    <button class="btn btn-secondary btn-sm float-right" onclick="copyToNotepad()">Save to Notepad</button>
+                </div>
+                <div class="card-body">
+                    <p class="card-text" id="decimalResult"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
