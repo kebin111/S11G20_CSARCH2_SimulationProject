@@ -7,6 +7,8 @@ To use:
 1.  Choose between two input types
   - 8-Digit Hexadecimal
   - 32-Bit Binary
+  - ![image](https://github.com/user-attachments/assets/1429755f-69ec-4f27-8d94-b118ec7d9ba1)
+
 2.  Input the number based on the chosen input type 
 3.  Choose between two Decimal output types
   - Fixed Point
